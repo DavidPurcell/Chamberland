@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import MapView from './components/MapView';
 import './App.css';
 
 function App() {
+
+  const polygon = [
+    [33.773, -84.395],
+    [33.773, -84.394],
+    [33.772, -84.394],
+    [33.772, -84.395]
+  ]
+
+  const mapProps = {polygon: polygon};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MapView {...mapProps} />
     </div>
   );
 }
-
 export default App;
